@@ -1,22 +1,47 @@
-<div>
-  <p id="counter">0</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calcuNow</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-  <button id="plus">+</button>
-  <button id="minus">-</button>
-  <button id="times">x</button>
-  <button id="equals">=</button>
-  <button id="clear">CLR</button>
+  <div id="container">
 
-  <button value="1" class="number" id="one">1</button>
-  <button value="2" class="number" id="two">2</button>
-  <button value="3" class="number" id="three">3</button>
-  <button value="4" class="number" id="four">4</button>
-  <button value="5" class="number" id="five">5</button>
-  <button value="6" class="number" id="six">6</button>
-  <button value="7" class="number" id="seven">7</button>
-  <button value="8" class="number" id="eight">8</button>
-  <button value="9" class="number" id="nine">9</button>
-  <button value="0" class="number" id="zero">0</button>
-</div>
+    <div id="calculator">
 
-<script src="scripts.js"></script>
+      <p id="counter">0</p>
+
+      <div id="numbers">
+        <button value="1" class="number" id="one">1</button>
+        <button value="2" class="number" id="two">2</button>
+        <button value="3" class="number" id="three">3</button>
+        <button value="4" class="number" id="four">4</button>
+        <button value="5" class="number" id="five">5</button>
+        <button value="6" class="number" id="six">6</button>
+        <button value="7" class="number" id="seven">7</button>
+        <button value="8" class="number" id="eight">8</button>
+        <button value="9" class="number" id="nine">9</button>
+        <button value="0" class="number" id="zero">0</button>
+      </div>
+
+      <div id="operators">
+        <button id="clear">CLR</button>
+        <button id="plus">+</button>
+        <button id="minus">-</button>
+        <button id="times">x</button>
+        <button id="divide">/</button>
+        <button id="equals">=</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+

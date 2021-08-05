@@ -3,6 +3,7 @@ let counter = document.getElementById('counter');
 let plus = document.getElementById('plus');
 let minus = document.getElementById('minus');
 let times = document.getElementById('times');
+let divide = document.getElementById('divide');
 let equals = document.getElementById('equals');
 let clear = document.getElementById('clear');
 
@@ -23,6 +24,7 @@ let numbers = document.getElementsByClassName('number');
 plus.addEventListener('mousedown', () => { calc.add(); });
 minus.addEventListener('mousedown', () => { calc.subtract(); });
 times.addEventListener('mousedown', () => { calc.multiply(); });
+divide.addEventListener('mousedown', () => { calc.divide(); });
 equals.addEventListener('mousedown', () => { calc.equals(); });
 clear.addEventListener('mousedown', () => { calc.clear(); });
 
@@ -33,22 +35,31 @@ for (let i = 0; i < numbers.length; i++) {
 class calculator {
   constructor() {
     this.value = '0';
-    this.sum = 0;
-    this.previous;
+    this.sum = '';
   }
 
   add() {
-    this.sum += Number(this.value);
-    this.previous = this.add;
-    this.clear();
+    this.sum += `${this.value} + `;
+    counter.innerText = this.sum;
   }
 
   subtract() {
-    alert('subtract')
+    this.sum -= Number(this.value);
+    this.previous = this.subtract;
+    this.clear();
   }
 
   multiply() {
-    alert('multiply')
+    if (this.sum === 0) this.sum = 1;
+    this.sum *= Number(this.value);
+    this.previous = this.multiply;
+    this.clear();
+  }
+
+  divide() {
+    this.sum /= Number(this.value);
+    this.previous = this.divide;
+    this.clear();
   }
 
   equals() {
@@ -57,9 +68,9 @@ class calculator {
   }
 
   change(value) {
-    if (this.value === '0') this.value = value
-    else this.value += value;
-    counter.innerText = this.value;
+    this.value += value;
+    this.sum += this.value;
+    counter.innerText += this.sum;
   }
 
   clear() {
