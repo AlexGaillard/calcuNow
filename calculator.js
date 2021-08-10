@@ -2,48 +2,52 @@ import('./domMethods.js')
 
 class calculator {
   constructor() {
-    this.value = '0';
-    this.sum = '';
+    this.current = 0;
+    this.total = 0;
+    this.numString = '';
+    this.previous;
   }
 
   add() {
-    this.sum += `${this.value} + `;
-    counter.innerText = this.sum;
+    this.previous = this.add;
+    this.total += this.current;
+    this.current = 0;
+    counter.innerHTML = this.current;
   }
 
   subtract() {
-    this.sum -= Number(this.value);
     this.previous = this.subtract;
-    this.clear();
+    this.total -= this.current;
+    this.current = 0;
+    counter.innerHTML = this.current;
   }
 
   multiply() {
-    if (this.sum === 0) this.sum = 1;
-    this.sum *= Number(this.value);
-    this.previous = this.multiply;
-    this.clear();
+
   }
 
   divide() {
-    this.sum /= Number(this.value);
-    this.previous = this.divide;
-    this.clear();
+
   }
 
   equals() {
     this.previous();
-    counter.innerText = this.sum.toString();
+    counter.innerHTML = this.total;
   }
 
   change(value) {
-    this.value += value;
-    this.sum += this.value;
-    counter.innerText += this.sum;
+    if (this.current === 0) this.numString = value
+    else this.numString += value;
+    this.current = Number(this.numString);
+    counter.innerHTML = this.numString;
   }
 
   clear() {
-    this.value = '0';
-    counter.innerText = this.value;
+
+  }
+
+  reset() {
+
   }
 
 }

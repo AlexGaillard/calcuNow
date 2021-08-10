@@ -3,6 +3,11 @@ body {
   background: #333333;
 }
 
+h1 {
+  color: white;
+  margin: 0;
+}
+
 #container {
   display: grid;
   grid-template-columns: auto 40% auto;
