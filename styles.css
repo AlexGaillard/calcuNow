@@ -24,7 +24,11 @@ button {
   border-radius: .5em;
 }
 
-#equals {
+.active {
+  background-color: blue;
+}
+
+.equals {
   background: #5c7e10;
 }
 
@@ -34,7 +38,7 @@ button:hover {
   border: 2px solid yellow;
 }
 
-#counter {
+.display {
   background: white;
   padding: .5em;
   border-radius: .2em;
