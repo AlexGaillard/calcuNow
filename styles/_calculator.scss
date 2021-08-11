@@ -1,57 +1,112 @@
 #container {
   display: grid;
-  grid-template-columns: auto 40% auto;
+  grid-template-columns: auto 25% auto;
   margin: 25vh 0 25vh 0;
 
   #calculator {
     grid-column: 2;
-    border: 1px solid black;
+    border: 1px solid #171a21;
     padding: 2em;
     background: #171a21;
     border-radius: .5em;
     box-shadow: 2px 2px 0 2px #FF7600;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
 
     .display {
       background: white;
-      padding: .5em;
-      border-radius: .2em;
+      padding: .2em .5em;
+      border-radius: .5em .5em 0 0;
       text-align: right;
+      margin: 0;
+      border: 2px solid #171a21;
+      font-size: 3em;
+      font-family: 'Orbitron', sans-serif;
     }
 
     .keys {
       display: grid;
-      grid-template-columns: auto auto;
+      grid-template-columns: 75% 25%;
+      grid-template-rows: 20% 80%;
+      height: 100%;
 
       .operators {
-        justify-self: center;
-        grid-column: 2;
-        display: grid;
-        grid-template-columns: 1fr;
-        width: 50%;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row: 1;
+        display: flex;
+        justify-content: space-around;
+
+        .operator {
+          width: 100%;
+          background: #F5E6CA;
+
+          &:hover {
+            background: black;
+            color: white;
+            border: 2px solid white;
+          }
+
+          &:active {
+            background: white;
+            color: black;
+          }
+        }
+
+        .active {
+          background: #FFE268;
+        }
+
       }
 
       button {
-        background: #FF7600;
         cursor: pointer;
         transition: .2s;
         font-size: 1.5em;
         font-weight: bold;
-
-        &:hover {
-          background: black;
-          color: white;
-          border: 2px solid yellow;
-        }
+        border: 2px solid #171a21;
       }
 
       .numbers {
         grid-column: 1;
+        grid-row: 2;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+
+        .number:nth-of-type(10) {
+          border-radius: 0 0 0 .5em;
+        }
+
+        .number {
+          background: #FF7600;
+
+          &:hover {
+            background: black;
+            color: white;
+            border: 2px solid white;
+          }
+
+          &:active {
+            background: white;
+            color: black;
+          }
+        }
+        .decimal, .clear {
+          background: #DDDDDD;
+        }
       }
 
-      .active {
-        background: blue;
+      .other {
+        grid-column: 2;
+        grid-row: 2;
+        display: flex;
+
+        .equals {
+          width: 100%;
+          border-radius: 0 0 .5em 0;
+          background: #81B214;
+        }
       }
 
     }
