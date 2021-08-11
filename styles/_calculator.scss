@@ -15,11 +15,20 @@
       background: white;
       padding: .5em;
       border-radius: .2em;
+      text-align: right;
     }
 
     .keys {
       display: grid;
       grid-template-columns: auto auto;
+
+      .operators {
+        justify-self: center;
+        grid-column: 2;
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 50%;
+      }
 
       button {
         background: #FF7600;
@@ -41,23 +50,12 @@
         grid-template-columns: 1fr 1fr 1fr;
       }
 
-      .operators {
-        justify-self: center;
-        grid-column: 2;
-        display: grid;
-        grid-template-columns: 1fr;
-        width: 50%;
+      .active {
+        background: blue;
       }
+
     }
   }
-}
-
-
-
-
-
-.active {
-  background-color: blue;
 }
 
 .equals {
